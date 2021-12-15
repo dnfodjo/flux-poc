@@ -1,0 +1,25 @@
+{
+  "name": "flux-poc",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "docker:build": "DOCKER_BUILDKIT=1 docker build --secret id=npmrc,src=$HOME/.npmrc . -t flux-poc",
+    "docker:up": "docker run -it --expose 3001 -p 3001:3001 flux-poc",
+    "docker:down": "docker rm flux-poc",
+    "docker:tag": "docker tag flux-poc nfodjodk/flux-poc:latest",
+    "docker:push": "docker push nfodjodk/flux-poc:latest",
+    "docker:clean": "docker system prune --volumes",
+    "docker:restart": "yarn docker:down && yarn docker:up"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "11.1.0",
+    "next-seo": "^4.28.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
