@@ -2,13 +2,11 @@
 Start the project by running:
 
 ```bash
-npm run dev
+yarn install
 ```
 
-For static-site generation run:
-
 ```bash
-npm run export
+yarn dev
 ```
 
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
